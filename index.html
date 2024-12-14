@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Шифрование Диффи-Хеллмана</title>
+</head>
+<body>
+<h1>Диффи-Хеллман: Шифрование и Расшифровка</h1>
+<form method="POST" action="process.php" >
+    <p>
+        Приватный ключ Алисы:
+        <input
+                type="number"
+                name="local_alice_key"
+                id="local_alice_key"
+                style="width: 200px"
+                required/>
+    </p>
+    <p>
+        Приватный ключ Боба:
+        <input
+                type="number"
+                name="local_bob_key"
+                id="local_bob_key"
+                style="width: 210px"
+                required/>
+    </p>
+    <p>
+        Общий ключ (g):
+        <input
+                type="number"
+                name="shared_key"
+                id="shared_key"
+                style="width: 255px"
+                required/>
+    </p>
+    <p>
+        Модуль (p):
+        <input
+                type="number"
+                name="shared_mod"
+                id="shared_mod"
+                style="width: 290px"
+                required/>
+    </p>
+    <p>
+        Введите текст:
+        <input
+                type="text"
+                name="text"
+                id="text"
+                style="width: 270px"
+                required/>
+    </p>
+
+    <p>
+        Выберите действие:
+        <select
+                name="action"
+                id="action"
+                style="width: 240px">
+            <option value="encrypt">Зашифровать</option>
+            <option value="decrypt">Расшифровать</option>
+        </select>
+    </p>
+    <button type="submit" style="width: 375px">Выполнить </button>
+</form>
+</body>
+</html>
