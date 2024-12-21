@@ -26,16 +26,16 @@ function encrypt_decrypt($value, $key) {
     return $result;
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $startTime = microtime(true);
     $startMemory = memory_get_usage();
 
-    $local_alice_key = intval($_POST['local_alice_key']);
-    $local_bob_key = intval($_POST['local_bob_key']);
-    $shared_key = intval($_POST['shared_key']);
-    $shared_mod = intval($_POST['shared_mod']);
-    $text = $_POST['text'];
-    $action = $_POST['action'];
+    $local_alice_key = intval($_GET['local_alice_key']);
+    $local_bob_key = intval($_GET['local_bob_key']);
+    $shared_key = intval($_GET['shared_key']);
+    $shared_mod = intval($_GET['shared_mod']);
+    $text = $_GET['text'];
+    $action = $_GET['action'];
 
     $shared_secret = key_df($local_alice_key, $local_bob_key, $shared_key, $shared_mod);
 
